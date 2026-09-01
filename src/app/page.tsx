@@ -322,7 +322,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
             <span className="text-xs text-gray-600 font-semibold bg-white/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-              LangGraph Active
+              Research Live
             </span>
           </div>
         </header>
@@ -664,18 +664,8 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-16 pb-8 text-center space-y-3">
-          <div className="flex justify-center gap-2 flex-wrap">
-            {["Next.js", "LangGraph", "Groq", "Tailwind CSS", "TypeScript"].map((tech) => (
-              <span
-                key={tech}
-                className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-500 bg-white/40 backdrop-blur-sm border border-white/50 rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
           <p className="text-xs text-gray-400 font-medium">
-            Vesta AI &middot; Built with LangGraph.js &middot; Powered by Groq
+            Investment Research Agent
           </p>
         </footer>
       </div>
