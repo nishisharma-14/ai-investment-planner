@@ -20,6 +20,8 @@ import {
   ThumbsDown,
   PieChart as ChartIcon,
   HelpCircle,
+  Moon,
+  Sun,
 } from "lucide-react";
 import { CompanyFinancials } from "@/lib/agent";
 
@@ -30,6 +32,16 @@ interface StreamStep {
 }
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
   const [companyName, setCompanyName] = useState("");
   const [loading, setLoading] = useState(false);
   const [currentStep, setCurrentStep] = useState<"idle" | "research" | "analyze" | "decide" | "complete" | "error">("idle");
@@ -312,18 +324,26 @@ export default function Home() {
         <header className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
-              V
+              W
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight text-gray-900">Vesta AI</h1>
-              <p className="text-xs text-gray-500 font-medium">Investment Research Agent</p>
+              <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">WealthWave</h1>
+              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">Smart Investment Assistant</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-            <span className="text-xs text-gray-600 font-semibold bg-white/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-              Research Live
-            </span>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-700/80 transition-all"
+            >
+              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span className="text-xs text-gray-600 dark:text-gray-300 font-semibold bg-white/50 dark:bg-gray-800/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 dark:border-gray-700/50">
+                Research Live
+              </span>
+            </div>
           </div>
         </header>
 
@@ -332,7 +352,7 @@ export default function Home() {
           
           {/* Search Section */}
           <section className="text-center max-w-2xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-gray-100 leading-tight">
               Budgeting & Investing <br />
               <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-emerald-600 bg-clip-text text-transparent">
                 Reimagined for Today's World
@@ -665,7 +685,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-16 pb-8 text-center space-y-3">
           <p className="text-xs text-gray-400 font-medium">
-            Investment Research Agent
+            WealthWave &middot; Smart Investment Assistant
           </p>
         </footer>
       </div>

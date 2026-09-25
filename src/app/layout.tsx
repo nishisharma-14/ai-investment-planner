@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vesta AI | Investment Research Agent",
+  title: "WealthWave | Smart Investment Assistant",
   description: "Institutional-grade Invest, Watch, or Pass investment analysis in real-time.",
 };
 
