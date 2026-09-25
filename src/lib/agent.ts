@@ -78,7 +78,7 @@ async function fetchFmp(endpoint: string, apiKey: string) {
 
 // ── Groq LLM Provider (use model names that Groq exposes to the current account) ──────────────────────────
 // `llama-3.1-8b-instant` is no longer available for many accounts and causes the 404 seen in production.
-const GROQ_MODELS = ["llama-3.3-70b-versatile", "llama-3.3-70b-specdec"];
+const GROQ_MODELS = ["llama-3.3-70b-versatile"];
 const MAX_RETRIES = 3;
 const RETRY_BASE_DELAY_MS = 2000;
 const GROQ_TIMEOUT_MS = 30000; // 30s timeout per request
